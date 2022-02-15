@@ -1,14 +1,14 @@
 <!--
  * @Date: 2022-02-14 11:36:04
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 11:26:10
- * @FilePath: \uni-vue3-ts-template\src\pages\index\index.vue
+ * @LastEditTime: 2022-02-15 17:48:01
+ * @FilePath: \uni-vue3-ts-template\src\pages\demo\index.vue
 -->
 <template>
     <layout>
         <u-row gutter="16">
             <u-col span="4">
-                <u-button @click="$u.route('/pages/demo/index')">路由跳转</u-button>
+                <u-button @click="test">网络请求</u-button>
             </u-col>
             <u-col span="4">
                 <u-button type="primary">主要按钮</u-button>
@@ -33,11 +33,13 @@
         <view class="text-area">
             <text class="title">{{ title }}</text>
         </view>
+        <view v-for="item in area" :key="item.area_id">{{ item.city_name }}</view>
     </layout>
 </template>
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
+import Api from '@/api'
 import useCurrentInstance from '@/hooks/useCurrentInstance'
 const { $vuex } = useCurrentInstance()
 
@@ -52,6 +54,14 @@ const reduce = () => {
     $vuex.commit('$order/orderCountReduce')
 }
 
+let area: any = ref([])
+const test = () => {
+    console.log(Api)
+    Api.area.getAreaList().then(result => {
+        area.value = result.data.data
+        console.log('area', area)
+    })
+}
 onMounted(() => {})
 
 console.log($vuex.get('$order.orderCount')) // 获取模块内属性

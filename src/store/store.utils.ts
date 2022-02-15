@@ -67,7 +67,6 @@ class EasyVuex {
     }
     // 读
     get = (name: string) => {
-        console.log(store.state)
         let value = getData(store.state, name)
         if (typeof value === 'undefined') return ''
         return JSON.parse(JSON.stringify(value))

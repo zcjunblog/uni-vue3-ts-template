@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-02-14 10:12:48
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 12:04:36
+ * @LastEditTime: 2022-02-15 17:02:13
  * @FilePath: \uni-vue3-ts-template\README.md
 -->
 
@@ -17,6 +17,11 @@
  # 打包
  npm run build:%PLATFORM%
 ```
+
+## 新建页面
+
+新建页面: 新建.vue 文件,输入 `layout` vscode 会自动联想代码片段
+新建组件: 新建.vue 文件,输入 `component` vscode 会自动联想代码片段
 
 ## 三方库归档
 
@@ -111,3 +116,4 @@ chore: 不属于以上类型的其他类型
 ## 补充
 
 script setup 语法糖基本使用 https://weya4pif1g.feishu.cn/docs/doccnRxpEK73uzpdCsBE342fJZf
+uni-app 项目推荐安装 vscode 代码片段插件 uni-app-snippets
