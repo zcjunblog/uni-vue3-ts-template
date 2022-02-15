@@ -1,0 +1,24 @@
+{
+    "awen": {
+        "prefix": "layout",
+        "body": [
+            "<template>",
+            "  <layout></layout>",
+            "</template>",
+            "",
+            "<script setup lang=\"ts\">",
+            "/**",
+            "* @name 页面名称",
+            "* 页面路由接收参数",
+            "* @param paramName     参数名称",
+            "*/",
+            "import { ref } from 'vue'",
+            "</script>",
+            "",
+            "<style lang=\"scss\" scoped>",
+            "",
+            "</style>"
+        ],
+        "description": "vue template"
+    }
+}
