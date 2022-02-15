@@ -1,7 +1,7 @@
 <!--
  * @Date: 2022-02-14 10:12:48
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 17:02:13
+ * @LastEditTime: 2022-02-15 17:55:02
  * @FilePath: \uni-vue3-ts-template\README.md
 -->
 
@@ -116,4 +116,5 @@ chore: 不属于以上类型的其他类型
 ## 补充
 
 script setup 语法糖基本使用 https://weya4pif1g.feishu.cn/docs/doccnRxpEK73uzpdCsBE342fJZf
+
 uni-app 项目推荐安装 vscode 代码片段插件 uni-app-snippets
