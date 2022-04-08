@@ -1,20 +1,59 @@
+<!--
+ * @Date: 2022-02-28 16:54:35
+ * @LastEditors: zhaozc
+ * @LastEditTime: 2022-04-08 11:30:47
+ * @FilePath: \uni-vue3-ts-template\index.html
+-->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="./static/favicon.ico" />
+        <script>
+            var coverSupport =
+                'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'))
+            document.write(
+                '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+                    (coverSupport ? ', viewport-fit=cover' : '') +
+                    '" />'
+            )
+        </script>
+        <title></title>
+        <!--preload-links-->
+        <!--app-context-->
+    </head>
+    <body>
+        <div id="app"><!--app-html--></div>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
     <script>
-      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
-        CSS.supports('top: constant(a)'))
-      document.write(
-        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
-        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+        // 完美解决 ios10 及以上 Safari 无法禁止缩放的问题
+        window.onload = function() {
+            if (navigator.userAgent.indexOf('Mobile') > -1) {
+                // 阻止双击放大
+                var lastTouchEnd = 0
+                document.addEventListener('touchstart', function(event) {
+                    if (event.touches.length > 1) {
+                        event.preventDefault()
+                    }
+                })
+                document.addEventListener(
+                    'touchend',
+                    function(event) {
+                        var now = new Date().getTime()
+                        if (now - lastTouchEnd <= 350) {
+                            event.preventDefault()
+                        }
+                        lastTouchEnd = now
+                    },
+                    false
+                )
+
+                // 阻止双指放大
+                document.addEventListener('gesturestart', function(event) {
+                    event.preventDefault()
+                })
+            }
+        }
     </script>
-    <title></title>
-    <!--preload-links-->
-    <!--app-context-->
-  </head>
-  <body>
-    <div id="app"><!--app-html--></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
 </html>

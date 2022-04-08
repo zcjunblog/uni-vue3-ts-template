@@ -3,7 +3,7 @@
         "prefix": "layout",
         "body": [
             "<template>",
-            "  <layout></layout>",
+            "  <Layout></Layout>",
             "</template>",
             "",
             "<script setup lang=\"ts\">",

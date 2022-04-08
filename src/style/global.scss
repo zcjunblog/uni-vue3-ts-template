@@ -1,0 +1,50 @@
+// 全局公共样式
+
+html,
+body,
+page {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 960px;
+    margin: auto;
+    uni-page-head {
+        display: none;
+    }
+    uni-page-wrapper {
+        height: 100% !important;
+    }
+    input {
+        user-select: auto;
+    }
+}
+@include mq($large) {
+    html,
+    body,
+    page {
+        user-select: text;
+    }
+}
+// 960px-1366px范围
+@include mq($large-great) {
+    html,
+    body,
+    page {
+        max-width: 100%;
+    }
+}
+
+// 点击穿透
+.no-touch {
+    pointer-events: none;
+}
+
+// 点击 触感透明度
+.hover-class-opacity {
+    opacity: 0.7;
+}
+
+// PC鼠标指针类型
+.cursor {
+    cursor: pointer;
+}

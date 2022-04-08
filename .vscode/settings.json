@@ -3,6 +3,12 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
+    "multiCommand.commands": [
+        {
+            "command": "workbench.action.files.save",
+            "sequence": ["workbench.action.files.saveAll"]
+        }
+    ],
     "editor.autoIndent": "full", // 换行后光标缩进
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
@@ -58,6 +64,6 @@
         "**/*.code-search": true,
         "dist": true
     },
-    "files.eol": "\n", //script、style标签第一级是否缩进
-    "git.autorefresh": false //script、style标签第一级是否缩进
+    "files.eol": "\n", // 换行符
+    "git.autorefresh": true // git自动刷新
 }

@@ -1,43 +1,13 @@
 /*
  * @Date: 2022-02-15 15:21:01
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 16:56:18
+ * @LastEditTime: 2022-04-08 09:35:26
  * @FilePath: \uni-vue3-ts-template\src\api\modules\area.ts
  */
 
+// 该文件仅做测试使用
 import { get, post } from '../request'
 
-export const getAreaList = (parent_id: number | null = null) =>
-    get<
-        {
-            // 返回参数的类型
-            code: 0
-            data: [
-                {
-                    area_id: 0
-                    children: ['string']
-                    city_name: 'string'
-                    parent_id: 0
-                }
-            ]
-            message: 'string'
-        },
-        {
-            // 传入参数的类型
-            parent_id: number | null
-        }
-    >('doctor-api/area/list', {
-        parent_id
-    })
+export const getAreaList = (params: GetAreaList.Param | AnyObject = {}) => get<GetAreaList.Response>('/doctor-api/area/list', params)
 
-export const postTest = (test: string) =>
-    post<
-        {
-            test: string
-        },
-        {
-            test: string
-        }
-    >('user-api/doctor/list', {
-        test
-    })
+// export const postTest = (params) => post<返回数据的类型, 传入参数的类型>('user-api/doctor/list', params)

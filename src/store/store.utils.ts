@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-02-14 17:21:01
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 11:57:53
- * @FilePath: \uni-vue3-ts-template\src\store\store.utils.ts
+ * @LastEditTime: 2022-03-21 18:05:28
+ * @FilePath: \awen-patient-h5\src\store\store.utils.ts
  */
 /* 使用方法
    import useCurrentInstance from '@/hooks/useCurrentInstance'
@@ -36,7 +36,7 @@ import store from './index'
 function getData(dataObj: object, name: string) {
     let newDataObj
     if (dataObj) {
-        newDataObj = JSON.parse(JSON.stringify(dataObj))
+        newDataObj = dataObj
         let k = '',
             d = '.',
             l = '[',
@@ -80,4 +80,4 @@ class EasyVuex {
     // commit
     commit = store.commit
 }
-export default EasyVuex
+export default new EasyVuex()

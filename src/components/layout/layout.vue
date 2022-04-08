@@ -1,8 +1,8 @@
 <!--
  * @Date: 2022-02-14 10:45:27
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-14 10:54:27
- * @FilePath: \uni-vue3-js-template\src\components\layout\layout.vue
+ * @LastEditTime: 2022-03-14 12:00:03
+ * @FilePath: \awen-patient-h5\src\components\layout\layout.vue
 -->
 <template>
     <div class="main" :style="{ backgroundColor: bgColor }">
@@ -11,22 +11,19 @@
     </div>
 </template>
 
-<script>
-export default {
-    props: ['bgColor'],
-    data() {
-        return {}
-    }
-}
+<script lang="ts" setup>
+const props = defineProps({
+    bgColor: String
+})
 </script>
 
 <style scoped lang="scss">
 .main {
     min-height: 100%;
     width: 100%;
-    color: $u-main-color;
+    color: #313131;
     box-sizing: border-box;
-    background-color: $u-bg-color;
+    background-color: #fff;
     overflow-x: hidden; /* 防止ios出现横向滚动轴 */
     font-family: PingFang SC, Helvetica Neue, Arial, sans-serif;
 }

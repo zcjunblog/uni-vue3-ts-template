@@ -1,8 +1,8 @@
 <!--
  * @Date: 2022-02-14 10:12:48
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-02-15 17:55:02
- * @FilePath: \uni-vue3-ts-template\README.md
+ * @LastEditTime: 2022-03-21 18:30:12
+ * @FilePath: \awen-patient-h5\README.md
 -->
 
 ## my-project
@@ -35,6 +35,8 @@ uview-ui - 内含常用 js 方法(节流防抖,对象克隆, 时间格式化等.
 | 包名     | 路径                     | 功能                                                                    |
 | -------- | ------------------------ | ----------------------------------------------------------------------- |
 | uview-ui | src\uni_modules\uview-ui | 不仅仅是 UI 库,1.8.3 文档: https://v1.uviewui.com/components/intro.html |
+| tools.ts | src\utils\tools.ts       | 仅针对当前项目编写的通用的业务方法 已挂载至全局 `$tools` 对象           |
+| timer.ts | src\utils\timer.ts       | 倒计时 js                                                               |
 
 ## Vuex 状态管理
 
@@ -70,7 +72,7 @@ uview-ui - 内含常用 js 方法(节流防抖,对象克隆, 时间格式化等.
     ]
 
 # 命名规范
-  mutation方法统一前面加"$"以区分
+  公共mutation方法统一前面加"$"以区分
   模块文件名前统一加"$"防止与公共属性名冲突
 ```
 
@@ -79,6 +81,8 @@ uview-ui - 内含常用 js 方法(节流防抖,对象克隆, 时间格式化等.
 ```
 # 所有类型文件统一放至src/types目录
 ```
+
+Api 模块命名空间规范[![bU25FA.png](https://s4.ax1x.com/2022/03/04/bU25FA.png)](https://imgtu.com/i/bU25FA)
 
 ## 路径别名
 
@@ -109,8 +113,8 @@ chore: 不属于以上类型的其他类型
 遵从 gitflow 规范
 
 -   新需求开发: 从 master 新建业务分支 feature/xxxxx
--   发布预发版本: 从 master 里面拉一个新分支 release/xxxxx 然后再合并当前业务分支 feature/xxxxxx
--   上线: 发布当前 release 分支，发布完成后合并到 master
+-   发布预发版本: 由于公司上预发，不需要邮件申请，故仍用对应分支 feature/xxxxx，但要合下 master 分支
+-   上线: 从对应分支 feature/xxxxx 拉一个新分支 release/xxxxx ，然后再合 master 分支，发布完成后合并到 master
 -   紧急 bug 修复: 基于 master 新建 hotfix/xxx 分支 发布后合并到 master
 
 ## 补充
