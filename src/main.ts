@@ -1,8 +1,8 @@
 /*
  * @Date: 2022-02-14 11:36:04
- * @LastEditors: revol
- * @LastEditTime: 2022-03-30 00:11:53
- * @FilePath: \awen-patient-h5\src\main.ts
+ * @LastEditors: zhaozc
+ * @LastEditTime: 2022-06-09 17:07:00
+ * @FilePath: \uni-vue3-ts-template\src\main.ts
  */
 import { createSSRApp } from 'vue'
 import App from './App.vue'
@@ -24,6 +24,7 @@ export function createApp() {
     directive(app)
     app.config.globalProperties.$tools = tools // 业务方法
     app.config.globalProperties.$vuex = $vuex // vuex方法
+    app.config.globalProperties.$router = $router // router方法
     app.config.globalProperties.$staticUrl = import.meta.env.VITE_APP_STATICURL // 网络图片 云存储域名
     return {
         app
