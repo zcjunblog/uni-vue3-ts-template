@@ -1,12 +1,13 @@
 /*
  * @Date: 2022-02-14 11:36:04
  * @LastEditors: zhaozc
- * @LastEditTime: 2022-06-09 17:07:00
+ * @LastEditTime: 2022-10-09 19:01:53
  * @FilePath: \uni-vue3-ts-template\src\main.ts
  */
 import { createSSRApp } from 'vue'
 import App from './App.vue'
 import $vuex from './store/store.utils'
+import $router from './utils/router'
 import uView from './uni_modules/uview-ui'
 import tools from './utils/tools'
 import directive from './directive'
